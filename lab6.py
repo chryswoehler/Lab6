@@ -1,6 +1,6 @@
 # Lab 06: Software Engineering
 # Chrystina Woehler
-# Last Edited: 3/20/2023
+# Last Edited: 3/21/2023
 
 def encode(password):
     #converts input into list
