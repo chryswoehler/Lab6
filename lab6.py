@@ -1,6 +1,6 @@
 # Lab 06: Software Engineering
 # Chrystina Woehler
-# Last Edited: 3/20/2023
+# Last Edited: 3/21/2023
 
 def encode(password):
     #converts input into list
@@ -14,6 +14,17 @@ def encode(password):
             convert[i] = str(3 - diff)
     convert = ''.join(convert)
     return convert
+
+
+def decode(encrypt):
+    my_string = ''  # forms blank list
+    for i, val in enumerate(encrypt):  # works through list one character at a time
+        val = int(val)
+        val -= 3  # subtracts 3 from each integer character
+        if val < 0:  # prevents negative values by wrapping integer values around 10
+            val += 10
+        my_string += str(val)  # concatenates string
+    return my_string
 
 
 
@@ -33,7 +44,8 @@ if __name__ == "__main__":
             password = encode(password)
             print('Your password has been encoded and stored!\n')
         elif choice == 2:
-            print()
+            decode_password = decode(password)
+            print(f"The encoded password is {password}, and the original password is {decode_password}")
         elif choice == 3:
             stop = True
 
